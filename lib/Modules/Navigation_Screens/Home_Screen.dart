@@ -7,13 +7,16 @@ class Home_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.separated(
-      itemBuilder: (context, index) => Post(),
-      separatorBuilder: (context, index) => Container(
-        height: 15,
-        color: Colors.transparent,
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+      child: ListView.separated(
+        itemBuilder: (context, index) => Post(),
+        separatorBuilder: (context, index) => Container(
+          height: 15,
+          color: Colors.transparent,
+        ),
+        itemCount: 3,
       ),
-      itemCount: 0,
     );
   }
 }

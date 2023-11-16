@@ -1,12 +1,16 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
-
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:university_hup/Modules/Navigation_Screens/Home_Screen.dart';
+import 'package:university_hup/Modules/Navigation_Screens/Lecture_Screen.dart';
 import '../Shared/Cubit/App_cubit.dart';
 import '../Shared/Cubit/App_state.dart';
+import '../Shared/constant.dart';
 
 // #EEE5D8   #407473
 class Layout_Screen extends StatelessWidget {
@@ -22,7 +26,7 @@ class Layout_Screen extends StatelessWidget {
         return Scaffold(
           key: scafoldkey,
            drawer:Drawer(
-            backgroundColor: Colors.blueGrey,
+            backgroundColor: c1,
 
             shadowColor: Colors.black,
             elevation: 0,
@@ -232,7 +236,7 @@ class Layout_Screen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ), // Choose the nav bar style with this property.,
           backgroundColor:HexColor('#E0E1DD'),
           body: Stack(
             children: [
@@ -291,7 +295,10 @@ class Layout_Screen extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  Padding(
+                 // Choose the nav bar style with this property.,
+
+
+                            Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       decoration: BoxDecoration(

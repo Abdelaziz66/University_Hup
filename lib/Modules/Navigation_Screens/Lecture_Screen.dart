@@ -1,214 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
+
+import '../../Shared/Component/component.dart';
+import '../../Shared/constant.dart';
 
 class Lecture_screen extends StatelessWidget {
-   Lecture_screen({super.key});
-  var drawerkey=GlobalKey<ScaffoldState>();
+  Lecture_screen({super.key});
+  var drawerkey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       key: drawerkey,
       backgroundColor: Colors.transparent,
       drawer: Drawer(
-        width: 130,
+        // width: 220,
         // shape: Border.all(width: 3,color: Colors.red,style: BorderStyle.solid),
         backgroundColor: Colors.transparent,
-        shadowColor: Colors.black,
+        shadowColor: c5,
         elevation: 0,
         child: Padding(
-          padding: const EdgeInsets.only(top: 25,left: 10,bottom: 90),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.blueGrey.withOpacity(1),
-            ),
-            child: Column(
-              children: [
-                SizedBox(height: 20,),
-                Container(width: double.infinity,
-                  height: 3,
-                  color: Colors.white.withOpacity(.2),
+          padding: const EdgeInsets.only(top: 25, left: 10, bottom: 0),
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: c1?.withOpacity(1),
                 ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: const Text(
-                          'L1',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  // child:ListView.separated(itemBuilder: (context, index) => Lecture_C(), separatorBuilder:
+                  //     (context, index) => SizedBox(), itemCount: 6,),
+                  child: Column(children: [
+                    Lecture_C(),
+                    Lecture_C(),
+                    Lecture_C(),
+                    Lecture_C(),
+                  ]),
                 ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: Text(
-                          'L2',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: Text(
-                          'L3',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: Text(
-                          'L4',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: Text(
-                          'L5',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Row(
-                    children: [
-                      // Icon(Icons.arrow_forward_ios,size: 29,),
-                      TextButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => loginscreen2()));
-                        },
-                        child: Text(
-                          'L6',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10,),
-
-
-              ],
-            ),
+              ),
+              Spacer(),
+            ],
           ),
         ),
       ),
       body: Container(
-
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15.0,top: 30),
+                  padding: const EdgeInsets.only(left: 15.0, top: 30),
                   child: IconButton(
                       onPressed: () => drawerkey.currentState?.openDrawer(),
-                      icon: FaIcon(FontAwesomeIcons.arrowRight,color: Colors.black,size: 25,)
-                  ),
+                      icon: FaIcon(
+                        FontAwesomeIcons.arrowRight,
+                        color: c1,
+                        size: 25,
+                      )),
                 ),
+
                 Spacer(),
               ],
             ),
-            Spacer(),
 
+
+            Spacer(),
           ],
         ),
       ),
