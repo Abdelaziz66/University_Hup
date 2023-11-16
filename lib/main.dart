@@ -10,6 +10,7 @@ import 'Shared/Style/App_Style.dart';
 
 
 void main() {
+  // new branch
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
