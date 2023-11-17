@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hexcolor/hexcolor.dart';
-
 import '../../Shared/Component/component.dart';
 import '../../Shared/constant.dart';
+import '../In_Lecture_Screens/In_Lecture_Screen.dart';
 
 class Lecture_screen extends StatelessWidget {
   Lecture_screen({super.key});
@@ -19,17 +18,18 @@ class Lecture_screen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         shadowColor: c5,
         elevation: 0,
+
         child: Padding(
-          padding: const EdgeInsets.only(top: 25, left: 10, bottom: 0),
+          padding: const EdgeInsets.only(top: 20, left: 10, bottom: 0),
           child: Column(
             children: [
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: c1?.withOpacity(1),
+                  color: c1.withOpacity(1),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(15.0),
                   // child:ListView.separated(itemBuilder: (context, index) => Lecture_C(), separatorBuilder:
                   //     (context, index) => SizedBox(), itemCount: 6,),
                   child: Column(children: [
@@ -37,39 +37,59 @@ class Lecture_screen extends StatelessWidget {
                     Lecture_C(),
                     Lecture_C(),
                     Lecture_C(),
+                    Lecture_C(),
+                    Lecture_C(),
                   ]),
                 ),
               ),
-              Spacer(),
+
+              const Spacer(),
             ],
           ),
         ),
       ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, top: 30),
-                  child: IconButton(
-                      onPressed: () => drawerkey.currentState?.openDrawer(),
-                      icon: FaIcon(
-                        FontAwesomeIcons.arrowRight,
-                        color: c1,
-                        size: 25,
-                      )),
-                ),
+      body: Stack(
+        children:[
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Matrial_Screen(),
+          ),
+          Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 0.0, top: 23),
+                    child: Container(
+                      width: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(topRight: Radius.circular(25),bottomRight: Radius.circular(25)),
+                        color: c4,
+                      ),
 
-                Spacer(),
-              ],
-            ),
+
+                      child: IconButton(
+                          onPressed: () => drawerkey.currentState?.openDrawer(),
+                          icon: FaIcon(
+                            FontAwesomeIcons.anglesRight,
+                            color: c1,
+                            size: 28,
+                          )),
+                    ),
+                  ),
+
+                  const Spacer(),
+                ],
+              ),
 
 
-            Spacer(),
-          ],
+              const Spacer(),
+            ],
+          ),
         ),
+        ]
       ),
     );
   }

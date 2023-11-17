@@ -15,11 +15,11 @@ class App_cubit extends Cubit<App_state> {
 // Navigation Bar Start Here >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   List<Widget> Nav_Bar_Items_List = [
-    Home_screen(),
+    const Home_screen(),
     Lecture_screen(),
-    Chat_screen(),
-    Task_screen(),
-    Profile_screen()
+    const Chat_screen(),
+    const Task_screen(),
+    const Profile_screen()
   ];
   int Nav_Bar_index = 0;
   void Nav_Bar_Function({required index}) {
@@ -28,6 +28,14 @@ class App_cubit extends Cubit<App_state> {
   }
 
 // Navigation Bar End Here >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Doctor And Engineer Start Here >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  bool DE=true;
+  void D_E_Function({required bool de}){
+    DE=de;
+    print(DE);
+    emit(D_E_state());
+  }
 
 
 }
