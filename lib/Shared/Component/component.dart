@@ -6,9 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../constant.dart';
 
-
-
-
 // Abdealziz ------------------------------------------------------------------------------
 
 Widget GlassBox({
@@ -55,7 +52,7 @@ Widget Post() {
                         decoration:
                             BoxDecoration(shape: BoxShape.circle, boxShadow: [
                           BoxShadow(
-                            color: c5!,
+                            color: c5,
                             blurRadius: 2,
                             spreadRadius: 2,
                           ),
@@ -63,10 +60,10 @@ Widget Post() {
                         child: CircleAvatar(
                           radius: 25,
                           backgroundColor: c1,
-                          backgroundImage: NetworkImage(''),
+                          backgroundImage: const NetworkImage(''),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Column(
@@ -75,7 +72,7 @@ Widget Post() {
                         children: [
                           Row(
                             children: [
-                              Text(
+                              const Text(
                                 'Name Here',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w900,
@@ -83,7 +80,7 @@ Widget Post() {
                                   color: Colors.black,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 4,
                               ),
                               Icon(
@@ -93,7 +90,7 @@ Widget Post() {
                               ),
                             ],
                           ),
-                          Text(
+                          const Text(
                             'Date & Time',
                             style: TextStyle(
                               // fontWeight: FontWeight.w800,
@@ -105,7 +102,7 @@ Widget Post() {
                           ),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       IconButton(
                           onPressed: () {},
                           icon: FaIcon(
@@ -115,7 +112,7 @@ Widget Post() {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Container(
@@ -123,7 +120,7 @@ Widget Post() {
                   width: double.infinity,
                   height: .3,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 ConditionalBuilder(
@@ -147,7 +144,7 @@ Widget Post() {
                             ],
                           ),
                         ),
-                    fallback: (context) => SizedBox(
+                    fallback: (context) => const SizedBox(
                           height: 0,
                         )),
                 ConditionalBuilder(
@@ -160,7 +157,7 @@ Widget Post() {
                                 onPressed: () {},
                                 minWidth: 1,
                                 padding: EdgeInsets.zero,
-                                child: Text(
+                                child: const Text(
                                   '#Tag',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
@@ -172,7 +169,7 @@ Widget Post() {
                             ],
                           ),
                         ),
-                    fallback: (context) => SizedBox(
+                    fallback: (context) => const SizedBox(
                           height: 10,
                         )),
                 ConditionalBuilder(
@@ -185,59 +182,92 @@ Widget Post() {
                             height: 200,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                 image: NetworkImage(
-                                  '',
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PacFBpXBfSh1aCipOEs5Wd0lJqAeBXbx2w&usqp=CAU',
                                 ),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ),
-                    fallback: (context) => SizedBox(
+                    fallback: (context) => const SizedBox(
                           height: 0,
                         )),
-
               ],
             ),
           ),
         ),
-        color: c3?.withOpacity(.2),
+        color: c3.withOpacity(.2),
         borderRadius: 25,
         x: 0,
         y: 0),
   );
 }
 
-Widget Lecture_C()=>InkWell(
-  onTap: () {},
-  child: Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Container(
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 22.0,
-            backgroundImage: AssetImage('',),
-            backgroundColor: c2,
-
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text(
-            'Computer Security',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: c5,
+Widget Lecture_C() => InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 22.0,
+              backgroundImage: const NetworkImage(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PacFBpXBfSh1aCipOEs5Wd0lJqAeBXbx2w&usqp=CAU',
+              ),
+              backgroundColor: c2,
             ),
-          ),
-        ],
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              'Computer Security',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: c5,
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
-  ),
-);
+    );
+
+Widget Matrial_C({required index}) => GestureDetector(
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GlassBox(
+            widget: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FaIcon(
+                    FontAwesomeIcons.solidFolder,
+                    color: c1,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'Lecture ${index + 1}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: c2,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            color: c5.withOpacity(.3),
+            borderRadius: 20,
+            x: 50,
+            y: 50),
+      ),
+    );
 
 // Widget Chat({context, required user_model? card_chat_list}) => Padding(
 //       padding: const EdgeInsets.only(top: 7.5, bottom: 7.5),
@@ -337,14 +367,5 @@ Widget Lecture_C()=>InkWell(
 //             'https://cdn.pixabay.com/photo/2017/08/01/08/29/woman-2563491_640.jpg'),
 //       ),
 //     );
-
-
-
-
-
-
-
-
-
 
 // Abdelhaq ----------------------------------------------------------------------------------------
